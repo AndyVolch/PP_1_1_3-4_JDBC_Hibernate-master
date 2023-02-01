@@ -16,31 +16,26 @@ public class UserServiceTest {
 
     @Test
     public void dropUsersTable() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.dropUsersTable();
         } catch (Exception e) {
             Assert.fail("При тестировании удаления таблицы произошло исключение\n" + e);
         }
-        Util.closeConnection();
     }
 
     @Test
     public void createUsersTable() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.createUsersTable();
         } catch (Exception e) {
             Assert.fail("При тестировании создания таблицы пользователей произошло исключение\n" + e.getMessage());
         }
-        Util.closeConnection();
     }
 
     @Test
     public void saveUser() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.createUsersTable();
@@ -58,12 +53,10 @@ public class UserServiceTest {
         } catch (Exception e) {
             Assert.fail("Во время тестирования сохранения пользователя произошло исключение\n" + e);
         }
-        Util.closeConnection();
     }
 
     @Test
     public void removeUserById() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.createUsersTable();
@@ -72,12 +65,10 @@ public class UserServiceTest {
         } catch (Exception e) {
             Assert.fail("При тестировании удаления пользователя по id произошло исключение\n" + e);
         }
-        Util.closeConnection();
     }
 
     @Test
     public void getAllUsers() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.createUsersTable();
@@ -90,12 +81,10 @@ public class UserServiceTest {
         } catch (Exception e) {
             Assert.fail("При попытке достать всех пользователей из базы данных произошло исключение\n" + e);
         }
-        Util.closeConnection();
     }
 
     @Test
     public void cleanUsersTable() {
-        Util.openConnection();
         try {
             userService.dropUsersTable();
             userService.createUsersTable();
@@ -108,6 +97,5 @@ public class UserServiceTest {
         } catch (Exception e) {
             Assert.fail("При тестировании очистки таблицы пользователей произошло исключение\n" + e);
         }
-        Util.closeConnection();
     }
 }
